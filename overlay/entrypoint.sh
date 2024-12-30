@@ -11,7 +11,7 @@ wg-quick up wg0
 
 # Infinite loop to run container
 
-if [ -n ${SHOULD_LOOP} ]; then
+if [ "${SHOULD_LOOP}" = "true" ]; then
   while true
     do
       sleep 1
