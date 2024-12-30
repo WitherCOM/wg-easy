@@ -10,7 +10,11 @@ sed -i "s|<endpoint>|${ENDPOINT}|g" /etc/wireguard/wg0.conf
 wg-quick up wg0
 
 # Infinite loop to run container
-while true
-  do
-    sleep 1
-  done
+
+if [ -n ${SHOULD_LOOP} ]; then
+  while true
+    do
+      sleep 1
+    done
+fi
+exit 0;
